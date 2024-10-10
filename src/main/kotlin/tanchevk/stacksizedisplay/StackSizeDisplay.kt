@@ -30,23 +30,47 @@ object StackSizeDisplay : ClientModInitializer {
 
 			ByteCountDataOutput.reset()
 
-			var count = if (byteCount >= 1_048_576)
+			val LOW = 0
+			val MID = 1
+			val HIGH = 2
+
+			var amountColor: Int
+
+			var count = if (byteCount >= 1_048_576) {
+				amountColor = HIGH
 				String.format("%.2f MB", byteCount / 1_048_576f)
-			else if (byteCount >= 1024)
+			} else if (byteCount >= 1024) {
+				amountColor = MID
 				String.format("%.2f KB", byteCount / 1024f)
-			else
+			} else {
+				amountColor = LOW
 				String.format("%d bytes", byteCount)
+			}
+
+			require(amountColor < 3) {
+				"Unexpected value found for amountColor: found $amountColor when max expected value was $HIGH"
+			}
 
 			tooltip.add(
 				Text.literal(count)
-					.formatted(Formatting.LIGHT_PURPLE)
+					.formatted(when (amountColor) {
+						LOW -> StackSizeDisplayConfig.toFormatting(StackSizeDisplayConfig.lowColor)
+						MID -> StackSizeDisplayConfig.toFormatting(StackSizeDisplayConfig.midColor)
+						HIGH -> StackSizeDisplayConfig.toFormatting(StackSizeDisplayConfig.highColor)
+						else -> {
+							logger.error("Invalid State! (amountColor: $amountColor)")
+							throw IllegalStateException("Invalid State")
+						}
+					})
 			)
 		} catch (e: Exception) {
 			logger.error("Failed to get item stack bytes: ", e)
-			tooltip.add(
-				Text.literal("Error getting bytes")
-					.formatted(Formatting.RED)
-			)
+			if (StackSizeDisplayConfig.showWhenError) {
+				tooltip.add(
+					Text.literal("Error getting bytes")
+						.formatted(Formatting.RED)
+				)
+			}
 		}
 
 		return tooltip

@@ -1,0 +1,22 @@
+{
+	"stacksizedisplay.midnightconfig.title": "Stack Size Display",
+	"stacksizedisplay.midnightconfig.enum.Colors.BLACK": "Black",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_BLUE": "Dark Blue",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_GREEN": "Dark Green",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_AQUA": "Dark Aqua",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_RED": "Dark Red",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_PURPLE": "Dark Purple",
+	"stacksizedisplay.midnightconfig.enum.Colors.GOLD": "Gold",
+	"stacksizedisplay.midnightconfig.enum.Colors.GRAY": "Gray",
+	"stacksizedisplay.midnightconfig.enum.Colors.DARK_GRAY": "Dark Gray",
+	"stacksizedisplay.midnightconfig.enum.Colors.BLUE": "Blue",
+	"stacksizedisplay.midnightconfig.enum.Colors.GREEN": "Green",
+	"stacksizedisplay.midnightconfig.enum.Colors.AQUA": "Aqua",
+	"stacksizedisplay.midnightconfig.enum.Colors.RED": "Red",
+	"stacksizedisplay.midnightconfig.enum.Colors.LIGHT_PURPLE": "Pink",
+	"stacksizedisplay.midnightconfig.enum.Colors.YELLOW": "Yellow",
+	"stacksizedisplay.midnightconfig.enum.Colors.WHITE": "White",
+
+	"stacksizedisplay.midnightconfig.category.behavior": "Tooltip Behavior",
+	"stacksizedisplay.midnightconfig.category.colors": "Tooltip Colors"
+}
