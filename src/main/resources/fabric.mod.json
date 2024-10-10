@@ -19,6 +19,12 @@
 				"value": "tanchevk.stacksizedisplay.StackSizeDisplay",
 				"adapter": "kotlin"
 			}
+		],
+		"main": [
+			{
+				"value": "tanchevk.stacksizedisplay.StackSizeDisplayMain",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
@@ -29,6 +35,7 @@
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
+		"fabric-language-kotlin": "*",
+		"midnightlib": ">=1.6.3"
 	}
 }
