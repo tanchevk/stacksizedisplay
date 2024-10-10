@@ -2,9 +2,9 @@ package tanchevk.stacksizedisplay
 
 import net.fabricmc.api.ClientModInitializer
 import net.minecraft.client.MinecraftClient
+import net.minecraft.util.Formatting
 import net.minecraft.item.ItemStack
 import net.minecraft.text.Text
-import net.minecraft.util.Formatting
 import org.slf4j.LoggerFactory
 
 object StackSizeDisplay : ClientModInitializer {

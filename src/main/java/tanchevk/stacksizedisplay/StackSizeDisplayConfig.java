@@ -1,8 +1,8 @@
 package tanchevk.stacksizedisplay;
 
 import eu.midnightdust.lib.config.MidnightConfig;
-import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.NotNull;
+import net.minecraft.util.Formatting;
 
 import static tanchevk.stacksizedisplay.StackSizeDisplayConfig.Colors.*;
 

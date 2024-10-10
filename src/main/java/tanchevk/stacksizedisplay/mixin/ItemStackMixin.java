@@ -1,11 +1,11 @@
 package tanchevk.stacksizedisplay.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import tanchevk.stacksizedisplay.StackSizeDisplay;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import tanchevk.stacksizedisplay.StackSizeDisplay;
 
 import java.util.List;
 
