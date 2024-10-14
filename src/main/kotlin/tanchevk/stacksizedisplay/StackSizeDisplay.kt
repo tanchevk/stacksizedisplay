@@ -6,6 +6,7 @@ import net.minecraft.util.Formatting
 import net.minecraft.item.ItemStack
 import net.minecraft.text.Text
 import org.slf4j.LoggerFactory
+import kotlin.jvm.java
 
 object StackSizeDisplay : ClientModInitializer {
     private val logger = LoggerFactory.getLogger("Stack Size Display")
@@ -20,6 +21,15 @@ object StackSizeDisplay : ClientModInitializer {
 		itemStack: ItemStack
 	): MutableList<Text> {
 		var tooltip = original
+
+		val reflectMethods = tooltip::class.java.declaredMethods
+
+		if (!reflectMethods.contains(reflectMethods.find { method ->
+			method.name == "add"
+		})) {
+			logger.error("ItemStack tooltip is immutable; Cannot modify!")
+			return original
+		}
 
 		try {
 			itemStack
