@@ -29,6 +29,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
+	// MidnightLib
 	modImplementation include ("maven.modrinth:midnightlib:${project.midnightlib_version}")
 }
 
