@@ -22,12 +22,11 @@ object StackSizeDisplay : ClientModInitializer {
 	): MutableList<Text> {
 		var tooltip = original
 
-		val reflectMethods = tooltip::class.java.declaredMethods
-
-		if (!reflectMethods.contains(reflectMethods.find { method ->
-			method.name == "add"
-		})) {
+		try {
+			tooltip::class.java.getMethod("add")
+		} catch (e: NoSuchMethodException) {
 			logger.error("ItemStack tooltip is immutable; Cannot modify!")
+			logger.error("Additional information: ", e)
 			return original
 		}
 

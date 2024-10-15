@@ -31,6 +31,8 @@ dependencies {
 
 	// MidnightLib
 	modImplementation include ("maven.modrinth:midnightlib:${project.midnightlib_version}")
+
+	implementation include ("org.jetbrains.kotlin:kotlin-reflect:2.0.20")
 }
 
 processResources {
